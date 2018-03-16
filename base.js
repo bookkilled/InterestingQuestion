@@ -81,3 +81,22 @@ function getMaxNumByKS(arr) {
 	console.log(total)
 	return getMaxNumByKS(left).concat([midBase],getMaxNumByKS(right))
 }
+// 判断是否是数组
+/*
+类型	结果
+Undefined	"undefined"
+Null	"object"（见下文）
+Boolean	"boolean"
+Number	"number"
+String	"string"
+Symbol （ECMAScript 6 新增）	"symbol"
+宿主对象（由JS环境提供）	Implementation-dependent
+函数对象（[[Call]] 在ECMA-262条款中实现了）	"function"
+任何其他对象	"object"
+*/
+function isArray(arr) {
+	return Object.prototype.toString.call(arr) == '[object Array]'
+}
+function isJsonObj(obj) {
+	return Object.prototype.toString.call(obj) == '[object Object]'
+}
